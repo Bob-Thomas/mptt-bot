@@ -1,0 +1,10 @@
+<style>
+    body {
+        text-align: center;
+    }
+</style>
+
+ALL THE KIK GROUPS: {{data | length}}<br>
+{% for row in data %}
+    <a href="/{{row[1]}}">{{row[0]}}</a> <br>
+{% endfor %}

@@ -1,0 +1,26 @@
+{% include "layout.html" %}
+{% block content %}
+    <div class="menu">
+        <div class="back">
+            <a href="/"><i class="fa fa-chevron-left"></i></a>
+            <img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+        <div class="name">ENDBOT</div>
+    </div>
+    <ol class="chat">
+        {% for row in data %}
+            {% if not row[0] %}
+                <li class="self">
+                {% else %}
+                <li class="other">
+                {% endif %}
+                <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+                <div class="msg">
+                    <div class="user">{{row[0]}}</div>
+                    <p>{{row[1]}}</p>
+
+                    <time>{{row[2] | ctime}}</time>
+                </div>
+            </li>
+            {%endfor%}
+        </ol>
+{% endblock %}
